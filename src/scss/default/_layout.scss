@@ -1,0 +1,70 @@
+//
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background: $body-bg;
+  color: $body-color;
+  font-family: $font-1;
+  background-color: $body-bg;
+}
+
+body {
+  font-size: $body-font-size;
+  line-height: $body-line-height;
+  position: relative;
+  min-width: 300px;
+  -webkit-text-size-adjust: none;
+  top: 0;
+  left: 0;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  -webkit-appearance: none;
+}
+
+h4 {
+  font-size: $h4;
+  line-height: $lineHeightHeaders;
+  font-style: italic;
+  font-style: bold;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  word-spacing: 4px;
+}
+
+.centerSqueeze {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+}
+.container {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.bg_dark {
+  background: $white;
+}
+
+.no-bullet {
+  padding: 0;
+  margin: 0;
+  padding-inline: 0;
+  list-style-type: none;
+}
+
+.mainContent {
+  margin-top: 1rem;
+}
+
+#root {
+  overflow: hidden;
+}

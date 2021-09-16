@@ -1,0 +1,44 @@
+.modal_header_wrapper{
+  display: flex;
+  padding: 1rem 0;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  h3{
+    font-weight: bold;
+    color: $primary;
+  }
+
+  
+}
+input.disable-input{
+  opacity: 0.5 ;
+  background: $gray !important;
+}
+.modalForm{
+  .align-items-center {
+    select{
+      border: 1px solid #ced4da;
+      font-size: 2rem;
+    }   
+  }
+}
+
+.modal-footer{
+  button{
+    font-size:2rem;
+
+    &:nth-child(2){
+      color: white;
+    }
+  }
+}
+.input-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 0 0;
+}
+.moredetail{
+  width:300px !important;
+}

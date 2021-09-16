@@ -1,0 +1,36 @@
+/**************************************
+    Default Styles
+***************************************/
+@import 'default/variables';
+@import 'default/mixins';
+@import '_responsive.css';
+@import './ventor/bootstrap/bootstrap.scss';
+
+@import 'default/fonts';
+@import 'default/layout';
+@import 'default/typography';
+@import 'default/extend';
+@import 'default/animations';
+@import 'default/shortcode';
+@import 'default/spacing';
+
+/**************************************
+    commons
+***************************************/
+
+@import 'commons/menu';
+@import 'commons/commons';
+@import 'commons/loading';
+@import 'commons/tableData';
+@import 'commons/modal';
+@import 'commons/footer';
+
+/**************************************
+    Pages
+***************************************/
+
+/**************************************
+    Other
+***************************************/
+
+@import 'custom';

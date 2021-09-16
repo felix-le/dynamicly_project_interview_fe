@@ -1,0 +1,58 @@
+.table-title{
+  text-align: center;
+  color: $primary;
+  text-transform: uppercase;
+}
+.addTableItem{
+  padding: 2rem;
+  width: 100%;
+  text-align: right;
+  .btn-add{
+    padding: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform:capitalize;
+  }
+}
+.react-bootstrap-table{
+  thead th {
+    vertical-align: top;
+    text-align: center;
+    text-transform: capitalize;
+  } 
+  .header-class{
+    background: $gray;
+    // color: white;
+    th{
+      &:first-child{
+        width: 5%;
+      }
+      &:nth-child(2){
+        width: 15%;
+      }
+      &:nth-child(3){
+        width: 12%;
+      }
+    }
+  }
+
+  tbody{
+    tr{
+      td{
+        word-wrap: break-word;
+
+        &:first-child{
+          text-align: center;
+        }
+
+        &:nth-child(2){
+          text-align: center;
+
+        }
+      }
+    }
+  }
+}
+.react-bootstrap-table-pagination{
+  padding-top: 2rem;
+}

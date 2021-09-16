@@ -1,0 +1,114 @@
+.headerMenu {
+  min-height: 12rem;
+  width: 100%;
+  overflow: hidden;
+  background-color: $white;
+  position: fixed;
+  margin-top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .navbar-brand {
+    transition: all 1s;
+    display: inline-block;
+    position: relative;
+
+    // @include media-breakpoint-down(lg){
+    //   width: 100%;
+    //   // max-width: 25%;
+    // }
+    // @include media-breakpoint-down(md){
+    //   max-width: 25%;
+
+    // }
+    @include media-breakpoint-down(md) {
+      max-width: 25%;
+    }
+  }
+
+  .navbar_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 70%;
+    .nav-item {
+      margin-right: 2rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .nav-link {
+    color: $dark;
+    padding: 2rem;
+    font-weight: bold;
+    font-size: 2rem;
+    display: block;
+    transition: all 1s;
+
+    &:hover {
+      background: $primary;
+      color: $white !important;
+    }
+    &.active {
+      background: $primary;
+      color: $white !important;
+    }
+
+    &.auth_menu_link {
+      font-size: 2rem;
+    }
+  }
+  .mr-auto.navbar_list.navbar-nav {
+    max-width: 100%;
+  }
+  // @include media-breakpoint-down(md) {
+
+  //   .header_brand_wrapper{
+  //     display: flex;
+  //     justify-content: space-between;
+  //     width: 100%;
+  //     align-items: center;
+
+  //   }
+  // }
+  &.fixed {
+    min-height: auto;
+    height: auto;
+    opacity: 0.9;
+    transition: height 0.6s;
+    .navbar-brand {
+      width: 25%;
+      // height: 0px;
+      display: block;
+      margin: 0;
+      max-width: 25%;
+      // @include media-breakpoint-down(md) {
+      //   max-width:25%;
+      //   width: 25%;
+      //   transition: all 1s;
+      //   display: inline-block;
+      //   position: relative;
+      // }
+    }
+    .navbar_list {
+      justify-content: center;
+      margin: 0 auto;
+    }
+    // @include media-breakpoint-down(md){
+    //   min-height: 60px;
+
+    //   .header_brand_wrapper{
+    //     .navbar-brand{
+    //       padding-bottom: 50px;
+    //     }
+    //   }
+    // }
+  }
+}

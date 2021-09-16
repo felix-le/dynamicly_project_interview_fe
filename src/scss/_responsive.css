@@ -1,0 +1,38 @@
+/* html{
+  //     @include media-breakpoint-up(xl) {
+  //         font-size:  62.5% !important;
+  //     }
+  //     @include media-breakpoint-down(lg) {
+  //         font-size:  50%;
+  //     }
+  //     @include media-breakpoint-down(md) {
+  //         font-size: 37.5%;
+  //     }
+  //     @include media-breakpoint-down(sm) {
+  //         font-size:  25%;
+  //     }
+  // } */
+
+html {
+  font-size: 65.5%;
+}
+@media (max-width: 1199.98px) {
+  html {
+    font-size: 60%;
+  }
+}
+@media (max-width: 991.98px) {
+  html {
+    font-size: 60%;
+  }
+}
+@media (max-width: 767.98px) {
+  html {
+    font-size: 60%;
+  }
+}
+@media (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+}
