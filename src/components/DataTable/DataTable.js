@@ -16,19 +16,20 @@ function DataTable({
   return (
     <>
       <h1 className='table-title'>{title}</h1>
-      <div className='d-flex justify-content-between'>
-        <div className='total_wrapper'>
-          <p>{`The sub-total of expenses is ${subTotal}`}</p>
-          <p>{`The total with taxes is ${total}`}</p>
+      <div className='d-flex justify-content-between mt-2'>
+        <div className='total_wrapper '>
+          <p>{`The sub-total of expenses is ${subTotal} $`}</p>
+          <p>{`The total with taxes is ${total} $`}</p>
         </div>
         <div className='addTableItem'>
-          <button className='btn btn-primary btn-add' onClick={handleAddNew}>
+          <button className='btn btn-success btn-add' onClick={handleAddNew}>
             {btnName}
           </button>
         </div>
       </div>
 
       <BootstrapTable
+        bordered={false}
         bootstrap4
         keyField='_id'
         columns={columns}

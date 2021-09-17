@@ -12,11 +12,11 @@ const ExpenseTable = ({
   handlePage,
 }) => {
   const columns = [
-    { dataField: 'description', text: 'description', sort: true },
+    { dataField: 'description', text: 'Description', sort: true },
     { dataField: 'amount', text: 'Amount', sort: true },
     { dataField: 'taxes', text: 'Taxes (15%)', sort: true },
     { dataField: 'date', text: 'Date', sort: true },
-    { dataField: 'actions', text: 'Actions' },
+    { dataField: 'actions', text: '' },
   ];
   const tableData = [];
   data &&
@@ -31,7 +31,7 @@ const ExpenseTable = ({
         actions: (
           <div className='btn-wrapper btn-table d-flex flex-md-row flex-column'>
             <button
-              className='btn btn-default btn-primary'
+              className='btn btn-warning mr-2'
               onClick={(e) => {
                 handleEdit(e, item._id);
               }}
@@ -39,12 +39,12 @@ const ExpenseTable = ({
               Edit
             </button>
             <button
-              className='btn btn-default btn-danger'
+              className='btn  btn-danger'
               onClick={(e) => {
                 handleRemove(e, item._id);
               }}
             >
-              Remove
+              Delete
             </button>
           </div>
         ),
@@ -61,7 +61,7 @@ const ExpenseTable = ({
         columns={columns}
         title='Expense tracker'
         handleAddNew={handleAddNew}
-        btnName='Add A New Page'
+        btnName='Add new expense'
         subTotal={subTotal}
         total={total}
       />

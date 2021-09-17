@@ -83,7 +83,7 @@ const Pagination = ({ totalItems, limit, getPage }) => {
       {numberPage > 1 ? (
         <>
           <div className='showingPage'>
-            Trang {parseFloat(currentPageNumber)} / {numberPage} trang
+            Page {parseFloat(currentPageNumber)} / {numberPage} Pages
           </div>
           <nav>
             <ul className={`${classes.paginationWrapper} pagination`}>

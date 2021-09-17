@@ -1,0 +1,18 @@
+.btn {
+  font-size: 1.4rem;
+}
+.react-bootstrap-table {
+  margin-top: 10px;
+  tr,
+  th,
+  td {
+    border: none;
+    vertical-align: middle;
+    border-bottom: none !important;
+    padding-left: 0;
+    padding-bottom: 0;
+  }
+  td {
+    padding: 0 0 1rem 0;
+  }
+}

@@ -15,7 +15,7 @@ const Expense = () => {
   const expensesState = useSelector((state) => state.expenseReducer);
 
   const dataTable = expensesState.expenses.expenses;
-  console.log('🚀 ~ file: index.js ~ line 18 ~ Expense ~ dataTable', dataTable);
+
   const dataTotal = expensesState.expenses.initData;
 
   const [showItem, setShowItem] = useState(showItemDefault);
@@ -76,7 +76,6 @@ const Expense = () => {
           />
         )}
       </div>
-
       {modalState.isAdding && <AddExpenseModal />}
     </div>
   );
