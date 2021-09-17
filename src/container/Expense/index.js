@@ -6,7 +6,7 @@ import ExpenseTable from './ExpenseTable';
 import AddExpenseModal from './Modals/AddExpenseModal';
 const showItemDefault = {
   page: 1,
-  limit: 5,
+  limit: 3,
   sort: 'amount',
 };
 
@@ -14,7 +14,12 @@ const Expense = () => {
   const dispatch = useDispatch();
   const expensesState = useSelector((state) => state.expenseReducer);
 
-  const data = expensesState.expenses;
+  const dataTable = expensesState.expenses.expenses;
+  console.log('🚀 ~ file: index.js ~ line 18 ~ Expense ~ dataTable', dataTable);
+  const dataTotal = expensesState.expenses.initData;
+
+  const [showItem, setShowItem] = useState(showItemDefault);
+
   const [modalState, setModalState] = useState({
     isAdding: false,
     isEditing: false,
@@ -22,8 +27,8 @@ const Expense = () => {
   });
 
   useEffect(() => {
-    dispatch(getExpenses(showItemDefault));
-  }, [dispatch]);
+    dispatch(getExpenses(showItem));
+  }, [showItem]);
 
   function handleRemove(e, id) {
     e.preventDefault();
@@ -48,16 +53,26 @@ const Expense = () => {
     console.log('🚀 handleAddNew');
   }
 
+  function handlePage(page) {
+    setShowItem({
+      ...showItem,
+      page,
+    });
+  }
+
   return (
     <div className='container'>
       <div className='table_wrapper'>
         {expensesState.isLoading && <Loading />}
-        {data && data.length > 0 && (
+        {dataTable && dataTable.length > 0 && (
           <ExpenseTable
-            data={data}
+            data={dataTable}
             handleRemove={handleRemove}
             handleAddNew={handleAddNew}
             handleEdit={handleEdit}
+            dataTotal={dataTotal}
+            limit={showItemDefault.limit}
+            handlePage={handlePage}
           />
         )}
       </div>

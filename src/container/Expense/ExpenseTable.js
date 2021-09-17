@@ -1,6 +1,16 @@
 import DataTable from '../../components/DataTable';
 import { sumAllElementsByNameSingleLine } from '../../helpers/sumTotal';
-const ExpenseTable = ({ data, handleEdit, handleRemove, handleAddNew }) => {
+import Pagination from '../../components/Pagination';
+
+const ExpenseTable = ({
+  data,
+  handleEdit,
+  handleRemove,
+  handleAddNew,
+  dataTotal,
+  limit,
+  handlePage,
+}) => {
   const columns = [
     { dataField: 'description', text: 'description', sort: true },
     { dataField: 'amount', text: 'Amount', sort: true },
@@ -41,19 +51,26 @@ const ExpenseTable = ({ data, handleEdit, handleRemove, handleAddNew }) => {
       };
       tableData.push(newObj);
     });
-  const subTotal = sumAllElementsByNameSingleLine(data, 'amount');
+  const subTotal = sumAllElementsByNameSingleLine(dataTotal, 'amount');
   const total = subTotal + subTotal * 0.15;
-
+  const dataTotalLength = dataTotal.length;
   return (
-    <DataTable
-      tableData={tableData}
-      columns={columns}
-      title='Expense tracker'
-      handleAddNew={handleAddNew}
-      btnName='Add A New Page'
-      subTotal={subTotal}
-      total={total}
-    />
+    <>
+      <DataTable
+        tableData={tableData}
+        columns={columns}
+        title='Expense tracker'
+        handleAddNew={handleAddNew}
+        btnName='Add A New Page'
+        subTotal={subTotal}
+        total={total}
+      />
+      <Pagination
+        totalItems={dataTotalLength}
+        limit={limit}
+        getPage={handlePage}
+      />
+    </>
   );
 };
 
