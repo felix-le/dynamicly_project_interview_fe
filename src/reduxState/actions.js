@@ -7,7 +7,7 @@ export const expenseList = (payload) => ({
 });
 
 export const getExpenses =
-  ({ page, limit = 5, sort = '' }) =>
+  ({ page, limit, sort = '' }) =>
   async (dispatch) => {
     dispatch({ type: actionsTypes.FETCH_EXPENSE_REQUEST });
     try {

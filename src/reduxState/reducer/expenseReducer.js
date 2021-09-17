@@ -8,6 +8,7 @@ const initialState = {
   expenses: [],
   isLoading: false,
   isError: false,
+  length: 0,
 };
 
 const reducer = (state = initialState, { type, payload }) => {
@@ -24,6 +25,7 @@ const reducer = (state = initialState, { type, payload }) => {
         ...state,
         isLoading: false,
         expenses: payload,
+        length: payload.length,
       };
     }
     case FETCH_EXPENSE_FAILURE: {
