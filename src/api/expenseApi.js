@@ -1,16 +1,16 @@
 import { get, post, update, deleteR } from './baseApi';
 
 export async function getExpensesApi(page = 1, limit, sort) {
-  return get(`/expenses?page=${page}&limit=${limit}&sort=${sort}`);
+  return get(`/expense?page=${page}&limit=${limit}&sort=${sort}`);
 }
 
 export async function createExpenseApi(expense) {
-  return post('/expenses', expense);
+  return post('/expense', expense);
 }
 
 export async function updateExpenseApi(expenseId, data) {
-  return update(`/expenses/${expenseId}`, data);
+  return update(`/expense/${expenseId}`, data);
 }
 export async function deleteExpenseApi(expenseId) {
-  return deleteR(`/expenses/${expenseId}`);
+  return deleteR(`/expense/${expenseId}`);
 }

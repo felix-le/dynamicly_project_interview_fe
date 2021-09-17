@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import {
   Redirect,
   BrowserRouter as Router,
@@ -6,11 +6,9 @@ import {
   Switch,
 } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-// import {Provider} from 'react-redux';
-// import store from './store';
+import { useDispatch, useSelector } from 'react-redux';
 
 // Components
-
 import NavBar from './components/commons/NavBar';
 import Footer from './components/commons/Footer';
 import routes from './container/routes';
@@ -18,7 +16,20 @@ import routes from './container/routes';
 import './scss/style.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
+// actions
+
+import { getExpenses } from './reduxState/actions';
+
 function App() {
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+
+  console.log('🚀 ~ file: App.js ~ line 22 ~ App ~ state', state);
+
+  useEffect(() => {
+    dispatch(getExpenses(1, 0, 'amount'));
+  }, []);
+
   return (
     <>
       <Suspense fallback={<div />}>
