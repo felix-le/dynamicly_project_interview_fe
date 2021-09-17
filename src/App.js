@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getExpenses(1, 0, 'amount'));
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
