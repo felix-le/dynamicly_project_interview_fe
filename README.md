@@ -35,4 +35,23 @@ Secondly, I would like to introduce my project.
 ## Flow
 
 1. [Build BE - Node.js, Express for getting the data from the database (MongoDB)](https://github.com/felix-le/dynamicly_project_interview_be)
+
+- run the server
+- connect to the MongoDB
+- get the data from the database
+- build filter, sort, pagination
+- fix mongodb error UnhandledPromiseRejectionWarning
+- updated function follow FE
+
 2. [Build FE - React, Redux for displaying the data](https://github.com/felix-le/dynamicly_project_interview_fe)
+
+- npx create react app
+- add style
+- working on RestApis
+- connect redux - save data state
+- create table component
+- create Modal components
+- working on add new an expense
+- add pagination
+- working on UI
+- working on other features (Edit, Delete, Update)
