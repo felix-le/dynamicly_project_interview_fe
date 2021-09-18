@@ -55,3 +55,4 @@ Secondly, I would like to introduce my project.
 - add pagination
 - working on UI
 - working on other features (Edit, Delete, Update)
+- working on Home Page
