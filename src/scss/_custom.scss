@@ -22,3 +22,21 @@
     color: #ccc;
   }
 }
+
+.btn-wrapper {
+  .btn-warning {
+    margin-right: 0.5rem;
+    @include media-breakpoint-down(sm) {
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+footer {
+  background: #321741;
+}
+
+.navbar_custom {
+  background: #321741 !important;
+}

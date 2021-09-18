@@ -19,7 +19,7 @@ const Example = (props) => {
 
   return (
     <div>
-      <Navbar color='dark' dark expand='md'>
+      <Navbar color='dark' dark expand='md' className='navbar_custom'>
         <NavbarBrand tag={RRNavLink} to='/home' activeClassName='active'>
           Dynamicly
         </NavbarBrand>

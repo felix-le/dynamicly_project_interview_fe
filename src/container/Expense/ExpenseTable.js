@@ -31,7 +31,7 @@ const ExpenseTable = ({
         actions: (
           <div className='btn-wrapper btn-table d-flex flex-md-row flex-column'>
             <button
-              className='btn btn-warning mr-2'
+              className='btn btn-warning'
               onClick={(e) => {
                 handleEdit(e, item._id);
               }}

@@ -92,41 +92,43 @@ const Expense = () => {
     });
   };
   return (
-    <div className='container'>
-      <div className='table_wrapper'>
-        {expensesState.isLoading && <Loading />}
-        {dataTable && dataTable.length > 0 && (
-          <ExpenseTable
-            data={dataTable}
-            handleRemove={handleRemove}
-            handleAddNew={handleAddNew}
-            handleEdit={handleEdit}
-            dataTotal={dataTotal}
-            limit={showItemDefault.limit}
-            handlePage={handlePage}
+    <div className='mt-5'>
+      <div className='container'>
+        <div className='table_wrapper'>
+          {expensesState.isLoading && <Loading />}
+          {dataTable && dataTable.length > 0 && (
+            <ExpenseTable
+              data={dataTable}
+              handleRemove={handleRemove}
+              handleAddNew={handleAddNew}
+              handleEdit={handleEdit}
+              dataTotal={dataTotal}
+              limit={showItemDefault.limit}
+              handlePage={handlePage}
+            />
+          )}
+        </div>
+        {modalState.isAdding && (
+          <AddExpenseModal
+            addFn={addExpenseFn}
+            closeModal={() => handleModalState('isAdding', false)}
+          />
+        )}
+        {modalState.isEditing && (
+          <EditExpenseModal
+            data={currExpense}
+            editFn={editExpenseFn}
+            closeModal={() => handleModalState('isEditing', false)}
+          />
+        )}
+        {modalState.isDeleting && (
+          <ConfirmModal
+            title='Delete Expense'
+            closeModal={() => handleModalState('isDeleting', false)}
+            excute={confirmDelete}
           />
         )}
       </div>
-      {modalState.isAdding && (
-        <AddExpenseModal
-          addFn={addExpenseFn}
-          closeModal={() => handleModalState('isAdding', false)}
-        />
-      )}
-      {modalState.isEditing && (
-        <EditExpenseModal
-          data={currExpense}
-          editFn={editExpenseFn}
-          closeModal={() => handleModalState('isEditing', false)}
-        />
-      )}
-      {modalState.isDeleting && (
-        <ConfirmModal
-          title='Delete Expense'
-          closeModal={() => handleModalState('isDeleting', false)}
-          excute={confirmDelete}
-        />
-      )}
     </div>
   );
 };
