@@ -42,6 +42,7 @@ Secondly, I would like to introduce my project.
 - build filter, sort, pagination
 - fix mongodb error UnhandledPromiseRejectionWarning
 - updated function follow FE
+- Backend Live Link: https://dynamicly.herokuapp.com/api
 
 2. [Build FE - React, Redux for displaying the data](https://github.com/felix-le/dynamicly_project_interview_fe)
 

@@ -12,7 +12,7 @@ const Home = () => {
         <div className='video-wrapper'>
           <video className='video-introduce' controls>
             <source
-              src='http://localhost:8888/videos/dynamicly.mp4'
+              src='https://dynamicly.herokuapp.com/videos/dynamicly.mp4'
               type='video/mp4'
             />
           </video>
