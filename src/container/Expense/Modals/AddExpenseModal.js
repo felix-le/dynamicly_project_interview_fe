@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import Modal from '../../../components/Modal';
 import { useForm } from 'react-hook-form';
 import uuid from 'uuid';
+
 const AddExpenseModal = ({ closeModal, addFn, data = {} }) => {
   const {
     register,

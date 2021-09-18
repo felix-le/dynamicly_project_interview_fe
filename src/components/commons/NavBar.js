@@ -9,7 +9,6 @@ import {
   NavLink,
   NavbarText,
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
 
 import { NavLink as RRNavLink } from 'react-router-dom';
 

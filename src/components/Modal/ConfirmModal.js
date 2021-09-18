@@ -2,6 +2,7 @@ import Modal from './Modal';
 const ConfirmModal = ({ title, closeModal, excute }) => {
   function handleConfirm() {
     excute();
+    closeModal();
   }
   return (
     <Modal show handleShow={closeModal} modalTitle={title}>

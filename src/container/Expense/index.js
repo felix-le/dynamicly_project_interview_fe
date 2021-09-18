@@ -1,9 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getExpenses, addExpense } from '../../reduxState/actions';
+import {
+  getExpenses,
+  addExpense,
+  updateExpense,
+  delExpense,
+} from '../../reduxState/actions';
 import Loading from '../../components/commons/Loading';
 import ExpenseTable from './ExpenseTable';
+// Modals
 import AddExpenseModal from './Modals/AddExpenseModal';
+import EditExpenseModal from './Modals/EditExpenseModal';
+import ConfirmModal from '../../components/Modal/ConfirmModal';
 const showItemDefault = {
   page: 1,
   limit: 3,
@@ -12,55 +20,69 @@ const showItemDefault = {
 
 const Expense = () => {
   const dispatch = useDispatch();
+
+  // Get state
   const expensesState = useSelector((state) => state.expenseReducer);
-
   const dataTable = expensesState.expenses;
-
   const dataTotal = expensesState.initData;
 
+  // Set current expense
+  const [currExpense, setCurrExpense] = useState({});
+
+  // Set default Data show
   const [showItem, setShowItem] = useState(showItemDefault);
 
+  // Set Modal Show
   const [modalState, setModalState] = useState({
     isAdding: false,
     isEditing: false,
     isDeleting: false,
   });
 
-  const [isRender, setIsRender] = useState(false);
-
+  // Get Data from API
   useEffect(() => {
     dispatch(getExpenses(showItem));
-  }, [dispatch, showItem, isRender]);
+  }, [dispatch, showItem]);
 
-  function handleRemove(e, id) {
-    e.preventDefault();
-    console.log('🚀   handleRemove ~ id', id);
-  }
-
+  // Open eddit modal
   function handleEdit(e, id) {
     e.preventDefault();
-    console.log('🚀  handleEdit ~ id', id);
+    handleModalState('isEditing', true);
+    const _currExpense = dataTable.find((item) => item._id === id);
+    setCurrExpense(_currExpense);
+  }
+  function editExpenseFn(data) {
+    dispatch(updateExpense(currExpense._id, data));
+    setCurrExpense({});
   }
 
-  // function confirmDelete(e, id) {
-  //   e.preventDefault();
-  //   console.log('🚀  confirmDelete ~ id', id);
-  // }
+  // Open remove modal
+  function handleRemove(e, id) {
+    e.preventDefault();
+    handleModalState('isDeleting', true);
+    const _currExpense = dataTable.find((item) => item._id === id);
+    setCurrExpense(_currExpense);
+  }
+  function confirmDelete() {
+    dispatch(delExpense(currExpense._id));
+    setCurrExpense({});
+  }
 
+  // Add new expense
   function handleAddNew() {
     handleModalState('isAdding', true);
   }
+  function addExpenseFn(data) {
+    dispatch(addExpense(data));
+    handleModalState('isAdding', false);
+  }
 
+  // handle page panigation
   function handlePage(page) {
     setShowItem({
       ...showItem,
       page,
     });
-  }
-  function addExpenseFn(data) {
-    dispatch(addExpense(data));
-    handleModalState('isAdding', false);
-    setIsRender(!isRender);
   }
 
   const handleModalState = (modal, value) => {
@@ -89,6 +111,20 @@ const Expense = () => {
         <AddExpenseModal
           addFn={addExpenseFn}
           closeModal={() => handleModalState('isAdding', false)}
+        />
+      )}
+      {modalState.isEditing && (
+        <EditExpenseModal
+          data={currExpense}
+          editFn={editExpenseFn}
+          closeModal={() => handleModalState('isEditing', false)}
+        />
+      )}
+      {modalState.isDeleting && (
+        <ConfirmModal
+          title='Delete Expense'
+          closeModal={() => handleModalState('isDeleting', false)}
+          excute={confirmDelete}
         />
       )}
     </div>
