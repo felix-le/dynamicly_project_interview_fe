@@ -2,7 +2,7 @@
 
 Author: Felix
 Date: 2021-09-18
-Live link:
+Live link: [Link](https://dynamicly-project-interview-fe.vercel.app/home)
 
 Firstly, I would like to say thanks to give me a chance to show my work.
 
@@ -57,3 +57,6 @@ Secondly, I would like to introduce my project.
 - working on UI
 - working on other features (Edit, Delete, Update)
 - working on Home Page
+
+**Note** fix Treating warnings as errors because process.env.CI = true while deploying to vercel
+create a variable "CI" - value is false
