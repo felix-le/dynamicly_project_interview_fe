@@ -1,4 +1,3 @@
-import { ListGroup, ListGroupItem } from 'reactstrap';
 const Home = () => {
   return (
     <main className='mt-5'>
