@@ -2,13 +2,15 @@ import {
   FETCH_EXPENSE_REQUEST,
   FETCH_EXPENSE_SUCCESS,
   FETCH_EXPENSE_FAILURE,
+  ADD_EXPENSE_SUCCESS,
+  ADD_EXPENSE_FAILURE,
 } from '../types';
 
 const initialState = {
   expenses: [],
   isLoading: false,
   isError: false,
-  length: 0,
+  initData: [],
 };
 
 const reducer = (state = initialState, { type, payload }) => {
@@ -24,8 +26,8 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         isLoading: false,
-        expenses: payload,
-        length: payload.length,
+        expenses: payload.expenses,
+        initData: payload.initData,
       };
     }
     case FETCH_EXPENSE_FAILURE: {
@@ -35,6 +37,20 @@ const reducer = (state = initialState, { type, payload }) => {
         isError: true,
       };
     }
+
+    case ADD_EXPENSE_SUCCESS: {
+      return {
+        ...state,
+        initData: [...state.initData, payload],
+      };
+    }
+    case ADD_EXPENSE_FAILURE: {
+      return {
+        ...state,
+        isError: true,
+      };
+    }
+
     default: {
       return state;
     }

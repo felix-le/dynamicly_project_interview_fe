@@ -11,6 +11,8 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
+import { NavLink as RRNavLink } from 'react-router-dom';
+
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -19,14 +21,14 @@ const Example = (props) => {
   return (
     <div>
       <Navbar color='dark' dark expand='md'>
-        <NavbarBrand tag={Link} to='/home'>
+        <NavbarBrand tag={RRNavLink} to='/home' activeClassName='active'>
           Dynamicly
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className='mr-auto' navbar>
             <NavItem>
-              <NavLink tag={Link} to='/expense'>
+              <NavLink tag={RRNavLink} to='/expense' activeClassName='active'>
                 Expense
               </NavLink>
             </NavItem>

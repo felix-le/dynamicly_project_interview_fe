@@ -48,7 +48,7 @@ const Pagination = ({ totalItems, limit, getPage }) => {
     } else {
       setLastPage(false);
     }
-  }, [currentPageNumber]);
+  }, [currentPageNumber, numberPage]);
 
   const [goPage, setGoPage] = useState('');
   function _handleKeyDown(e) {

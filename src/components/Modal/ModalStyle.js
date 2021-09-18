@@ -40,6 +40,7 @@ const modalStyles = createUseStyles({
     boxShadow: [0, 0, '0.625rem', 'rgba(0, 0, 0, 0.2)'],
     position: 'relative',
     padding: '3rem',
+    marginTop: '20rem',
 
     '@media (min-width: 992px)': {
       width: '1000px',

@@ -20,3 +20,16 @@ export const getExpenses =
       dispatch({ type: actionsTypes.FETCH_EXPENSE_FAILURE, error });
     }
   };
+
+export const addExpense = (dataInput) => async (dispatch) => {
+  try {
+    const res = await expenseApi.createExpenseApi(dataInput);
+    const { data } = res;
+    dispatch({
+      type: actionsTypes.ADD_EXPENSE_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({ type: actionsTypes.ADD_EXPENSE_FAILURE, error });
+  }
+};
