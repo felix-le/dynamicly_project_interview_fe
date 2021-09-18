@@ -35,6 +35,7 @@ Secondly, I would like to introduce my project.
 ## Flow
 
 1. [Build BE - Node.js, Express for getting the data from the database (MongoDB)](https://github.com/felix-le/dynamicly_project_interview_be)
+   Live link: [Link](https://dynamicly.herokuapp.com/api)
 
 - run the server
 - connect to the MongoDB
@@ -45,6 +46,7 @@ Secondly, I would like to introduce my project.
 - Backend Live Link: https://dynamicly.herokuapp.com/api
 
 2. [Build FE - React, Redux for displaying the data](https://github.com/felix-le/dynamicly_project_interview_fe)
+   Live link: [Link](https://dynamicly-project-interview-fe.vercel.app/home)
 
 - npx create react app
 - add style
@@ -57,6 +59,6 @@ Secondly, I would like to introduce my project.
 - working on UI
 - working on other features (Edit, Delete, Update)
 - working on Home Page
-
-**Note** fix Treating warnings as errors because process.env.CI = true while deploying to vercel
-create a variable "CI" - value is false
+  ==> if data.length > 4 then add pagination.
+  **Note** fix Treating warnings as errors because process.env.CI = true while deploying to vercel
+  create a variable "CI" - value is false
