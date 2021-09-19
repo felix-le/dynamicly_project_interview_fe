@@ -32,6 +32,12 @@ Secondly, I would like to introduce my project.
 2. Back end: Node.js, Express
 3. Database: MongoDB
 
+## How to run the application:
+
+- Install Node.js and npm
+- yarn
+- yarn start
+
 ## Flow
 
 1. [Build BE - Node.js, Express for getting the data from the database (MongoDB)](https://github.com/felix-le/dynamicly_project_interview_be)
@@ -62,3 +68,59 @@ Secondly, I would like to introduce my project.
   ==> if data.length > 4 then add pagination.
   **Note** fix Treating warnings as errors because process.env.CI = true while deploying to vercel
   create a variable "CI" - value is false
+
+Closed. This question does not meet Stack Overflow guidelines. It is not currently accepting answers.
+Want to improve this question? Update the question so it's on-topic for Stack Overflow.
+
+Closed last year.
+
+I want to describe directory & file structures in some of my Jekyll blog posts, does Markdown provide a neat way of outputting such a thing?
+
+For example, you can see at this link on the Jekyll website that the directory & file structure is output on the page very neatly:
+
+```
+src
+├── api
+│    ├── baseApi.js
+│    └── expensesApi.js
+├── components
+│   ├── commons (common components - like Footer, Navbar, Loading)
+│   └── DataTable (component for displaying data)
+│    │      └── DataTable.js
+│    │      └── index.js
+│    └── DataTable (component for displaying data)
+│    │      └── DataTable.js
+│    │      └── index.js
+│    └── Modal (component for show modals)
+│    │      └── ConfirmModal.js
+│    │      └── index.js
+│    │      └── Modal.js
+│    │      └── ModalStyle.js
+│    └── Pagination (component for pagination)
+│           └── Pagination.js
+│           └── index.js
+├── container
+│     ├── Expense (container for expense)
+│     │   ├── ExpenseTable.js
+│     │   └── index.js
+│     │   └── Modals
+│     │          └── AddExpenseModal.js
+│     │          └── EditExpenseModal.js
+│     │
+│     └── Home (container for home)
+│     │    └── Home.js
+│     │    └── index.js
+│     └── routes.js
+├── reduxState
+│    └── reducer
+│    │    └── expenseReducer.js
+│    │    └── index.js
+│    └── actions.js
+│    └── types.js
+├── store
+│    └── index.js
+├── scss
+│    └── style.scss
+├── App.js
+└── index.js
+```
