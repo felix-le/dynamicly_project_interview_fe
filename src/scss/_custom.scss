@@ -17,6 +17,16 @@
   }
 }
 
+.react-bootstrap-table {
+  tbody {
+    tr {
+      td:first-child:first-letter {
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
 .page-link {
   &.disabled {
     color: #ccc;
