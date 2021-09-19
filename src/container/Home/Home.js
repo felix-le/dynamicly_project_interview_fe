@@ -1,3 +1,6 @@
+import { NavItem, NavLink } from 'reactstrap';
+
+import { NavLink as RRNavLink } from 'react-router-dom';
 const Home = () => {
   return (
     <main className='mt-5'>
@@ -18,16 +21,16 @@ const Home = () => {
         </div>
         <div className='group-btn-wrapper mt-5'>
           <ul className='list-link d-flex flex-wrap w-100'>
-            <li>
-              <a
-                href='https://dynamicly.com/'
-                className='link-cta btn btn-secondary text-white'
-                target='_blank'
-                rel='noreferrer'
+            <NavItem>
+              <NavLink
+                tag={RRNavLink}
+                to='/expense'
+                activeClassName='active'
+                className='btn btn-success text-white'
               >
-                Our Website
-              </a>
-            </li>
+                Requirement
+              </NavLink>
+            </NavItem>
             <li>
               <a
                 href='https://github.com/felix-le/dynamicly_project_interview_fe'
@@ -35,9 +38,10 @@ const Home = () => {
                 rel='noreferrer'
                 target='_blank'
               >
-                Front end GitHub Link
+                Front-end
               </a>
             </li>
+
             <li>
               <a
                 href='https://github.com/felix-le/dynamicly_project_interview_be'
@@ -46,7 +50,7 @@ const Home = () => {
                 rel='noreferrer'
               >
                 {' '}
-                Back End GitHub Link
+                Back-end
               </a>
             </li>
           </ul>
