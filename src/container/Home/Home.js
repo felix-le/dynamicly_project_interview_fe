@@ -19,8 +19,10 @@ const Home = () => {
             />
           </video>
         </div>
+
         <div className='group-btn-wrapper mt-5'>
-          <ul className='list-link d-flex flex-wrap w-100'>
+          <h2>Please click on "expense" below to get my answers</h2>
+          <ul className='list-link d-flex flex-wrap w-100 mt-3'>
             <NavItem>
               <NavLink
                 tag={RRNavLink}
@@ -28,7 +30,7 @@ const Home = () => {
                 activeClassName='active'
                 className='btn btn-success text-white'
               >
-                Requirement
+                Expenses
               </NavLink>
             </NavItem>
             <li>
