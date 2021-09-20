@@ -69,15 +69,6 @@ Secondly, I would like to introduce my project.
   **Note** fix Treating warnings as errors because process.env.CI = true while deploying to vercel
   create a variable "CI" - value is false
 
-Closed. This question does not meet Stack Overflow guidelines. It is not currently accepting answers.
-Want to improve this question? Update the question so it's on-topic for Stack Overflow.
-
-Closed last year.
-
-I want to describe directory & file structures in some of my Jekyll blog posts, does Markdown provide a neat way of outputting such a thing?
-
-For example, you can see at this link on the Jekyll website that the directory & file structure is output on the page very neatly:
-
 ```
 src
 ├── api
