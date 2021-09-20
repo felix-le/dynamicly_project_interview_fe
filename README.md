@@ -79,9 +79,6 @@ src
 │   └── DataTable (component for displaying data)
 │    │      └── DataTable.js
 │    │      └── index.js
-│    └── DataTable (component for displaying data)
-│    │      └── DataTable.js
-│    │      └── index.js
 │    └── Modal (component for show modals)
 │    │      └── ConfirmModal.js
 │    │      └── index.js
