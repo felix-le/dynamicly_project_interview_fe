@@ -66,7 +66,7 @@ Secondly, I would like to introduce my project.
 - working on other features (Edit, Delete, Update)
 - working on Home Page
 - Bonus: if data.length > 4 then add pagination.
-  **Note** fix Treating warnings as errors because process.env.CI = true while deploying to vercel
+- **Note** fix Treating warnings as errors because process.env.CI = true while deploying to vercel
   create a variable "CI" - value is false
 
 ```
